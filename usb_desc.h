@@ -2,7 +2,7 @@
 
 #define PORT1_NUM_CONFIGS 4
 
-#define PAYLOAD payload_dev
+#define PAYLOAD default_payload
 
 #if defined (FW301)
    #if defined (WBOOTLOADER)
@@ -81,13 +81,13 @@ const unsigned int8 USB_CONFIG_DESC[] = {
       0x09, 0x02, 0x12, 0x00, 0x01, 0x00, 0x00, 0x80, 0xfa, 0x09, 0x04, 0x00, 0x00, 0x00, 0xfe, 0x01,
       0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, MAGIC_NUMBER,
       #if defined (FW301)
-         payload_dev_3_01_macro_pic_1, payload_dev_3_01_macro_pic_2, payload_dev_3_01_macro_pic_3,
+         default_payload_3_01_macro_pic_1, default_payload_3_01_macro_pic_2, default_payload_3_01_macro_pic_3,
       #elif defined (FW310)
-         payload_dev_3_10_macro_pic_1, payload_dev_3_10_macro_pic_2, payload_dev_3_10_macro_pic_3,
+         default_payload_3_10_macro_pic_1, default_payload_3_10_macro_pic_2, default_payload_3_10_macro_pic_3,
       #elif defined (FW315)
-         payload_dev_3_15_macro_pic_1, payload_dev_3_15_macro_pic_2, payload_dev_3_15_macro_pic_3,
+         default_payload_3_15_macro_pic_1, default_payload_3_15_macro_pic_2, default_payload_3_15_macro_pic_3,
       #elif defined (FW341)
-         payload_dev_3_41_macro_pic_1, payload_dev_3_41_macro_pic_2, payload_dev_3_41_macro_pic_3,
+         default_payload_3_41_macro_pic_1, default_payload_3_41_macro_pic_2, default_payload_3_41_macro_pic_3,
       #else
          #error Firmware not defined
       #endif
