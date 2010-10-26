@@ -6,15 +6,12 @@
 // Bootloader Memory Space
 // Define your bootloader here
 // BEEPIC USB HID Bootloader
-#if defined (WBOOTLOADER)
+#if defined (BOOTLOADER)
    #define CODE_START   0x1000
    #build(reset=CODE_START, interrupt=CODE_START+0x08)
    #org 0, CODE_START-1 {}
 #endif
 /////////////////////////
-
-#define LEDV PIN_B4
-#define LEDR PIN_B5
 
 #define USB_MAX_NUM_INTERFACES 1
 
@@ -307,14 +304,14 @@ void OnDongleOK()
 {
    BlinkMode=1;
    disable_interrupts(INT_TIMER0);
-   output_high(LEDV);
+   output_high(LEDG);
    output_low(LEDR);
 }
 
 void main()
 {
    output_high(LEDR);
-   output_low(LEDV);
+   output_low(LEDG);
    
    usb_init();
    

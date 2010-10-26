@@ -2,40 +2,147 @@
 
 #define PORT1_NUM_CONFIGS 4
 
-#define PAYLOAD default_payload
-
-#if defined (FW301)
-   #if defined (WBOOTLOADER)
-      #export (HEX, FILE=PSGrooPIC_BEEPIC_FW301.hex)
+#if defined (FW276)
+   #if defined (BOOTLOADER)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW276_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW276_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW276_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW276_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif   
    #else
-      #export (HEX, FILE=PSGrooPIC_DIY_FW301.hex)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW276_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW276_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW276_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW276_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif
+   #endif
+   #define RTOC_TABLE
+   #define SHELLCODE_ADDR
+   #define FIRMWARE 2_76
+#elif defined (FW301)
+   #if defined (BOOTLOADER)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW301_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW301_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW301_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW301_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif   
+   #else
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW301_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW301_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW301_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW301_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif
    #endif
    #define RTOC_TABLE      0x80,0x00,0x00,0x00,0x00,0x32,0x06,0x40
    #define SHELLCODE_ADDR  0x80,0x00,0x00,0x00,0x00,0x3B,0xFB,0xC8
    #define FIRMWARE 3_01
 #elif defined (FW310)
-   #if defined (WBOOTLOADER)
-      #export (HEX, FILE=PSGrooPIC_BEEPIC_FW310.hex)
+   #if defined (BOOTLOADER)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW310_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW310_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW310_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW310_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif   
    #else
-      #export (HEX, FILE=PSGrooPIC_DIY_FW310.hex)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW310_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW310_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW310_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW310_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif
    #endif
    #define RTOC_TABLE      0x80,0x00,0x00,0x00,0x00,0x33,0xDA,0x10
    #define SHELLCODE_ADDR  0x80,0x00,0x00,0x00,0x00,0x3D,0xDE,0x30
    #define FIRMWARE 3_10
 #elif defined (FW315)
-   #if defined (WBOOTLOADER)
-      #export (HEX, FILE=PSGrooPIC_BEEPIC_FW315.hex)
+   #if defined (BOOTLOADER)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW315_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW315_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW315_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW315_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif   
    #else
-      #export (HEX, FILE=PSGrooPIC_DIY_FW315.hex)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW315_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW315_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW315_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW315_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif
    #endif
    #define RTOC_TABLE      0x80,0x00,0x00,0x00,0x00,0x33,0xDA,0x10
    #define SHELLCODE_ADDR  0x80,0x00,0x00,0x00,0x00,0x3D,0xDE,0x30
    #define FIRMWARE 3_15
 #elif defined (FW341)
-   #if defined (WBOOTLOADER)
-      #export (HEX, FILE=PSGrooPIC_BEEPIC_FW341.hex)
+   #if defined (BOOTLOADER)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW341_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW341_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW341_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_BEEPIC_FW341_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif   
    #else
-      #export (HEX, FILE=PSGrooPIC_DIY_FW341.hex)
+      #if defined (DEFPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW341_DEF.hex)
+      #elif defined (DEVPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW341_DEV.hex)
+      #elif defined (DMPPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW341_DMP.hex)
+      #elif defined (NUAPL)
+         #export (HEX, FILE=PSGrooPIC_DIY_FW341_NUA.hex)
+      #else
+         #error Payload not defined
+      #endif
    #endif
    #define RTOC_TABLE      0x80,0x00,0x00,0x00,0x00,0x33,0xE7,0x20
    #define SHELLCODE_ADDR  0x80,0x00,0x00,0x00,0x00,0x3D,0xEE,0x70
@@ -44,10 +151,22 @@
    #error Firmware not defined
 #endif
 
-#define SHELLCODE_PAGE         0x80,0x00,0x00,0x00,0x00,0x40,0x00,0x00
-#define SHELLCODE_DESTINATION   SHELLCODE_ADDR
+#if defined (DEFPL)
+   #define PAYLOAD default_payload
+#elif defined (DEVPL)
+   #define PAYLOAD payload_dev
+#elif defined (DMPPL)
+   #define PAYLOAD payload_dump_elfs
+#elif defined (NUAPL)
+   #define PAYLOAD payload_no_unauth_syscall
+#else
+   #error Payload not defined
+#endif
+
+#define SHELLCODE_PAGE        0x80,0x00,0x00,0x00,0x00,0x40,0x00,0x00
+#define SHELLCODE_DESTINATION SHELLCODE_ADDR
 #define SHELLCODE_PTR         SHELLCODE_ADDR + 0x08
-#define SHELLCODE_ADDRESS      SHELLCODE_ADDR + 0x18
+#define SHELLCODE_ADDRESS     SHELLCODE_ADDR + 0x18
 
 #define PAYLOAD_INCLUDE_(payload, firmware) <PL3/payload##_##firmware.h>
 #define PAYLOAD_INCLUDE(payload, firmware) PAYLOAD_INCLUDE_(payload, firmware)
@@ -80,14 +199,66 @@ const unsigned int8 USB_CONFIG_DESC[] = {
    //PORT1_CONFIG
       0x09, 0x02, 0x12, 0x00, 0x01, 0x00, 0x00, 0x80, 0xfa, 0x09, 0x04, 0x00, 0x00, 0x00, 0xfe, 0x01,
       0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, MAGIC_NUMBER,
-      #if defined (FW301)
-         default_payload_3_01_macro_pic_1, default_payload_3_01_macro_pic_2, default_payload_3_01_macro_pic_3,
+      #if defined (FW276)
+         #if defined (DEFPL)
+            default_payload_2_76_macro_pic_1, default_payload_2_76_macro_pic_2, default_payload_2_76_macro_pic_3,
+         #elif defined (DEVPL)
+            payload_dev_2_76_macro_pic_1, payload_dev_2_76_macro_pic_2, payload_dev_2_76_macro_pic_3,
+         #elif defined (DMPPL)
+            payload_dump_elfs_2_76_macro_pic_1, payload_dump_elfs_2_76_macro_pic_2, payload_dump_elfs_2_76_macro_pic_3,
+         #elif defined (NUAPL)
+            payload_no_unauth_syscall_2_76_macro_pic_1, payload_no_unauth_syscall_2_76_macro_pic_2, payload_no_unauth_syscall_2_76_macro_pic_3,
+         #else
+            #error Payload not defined
+         #endif
+      #elif defined (FW301)
+         #if defined (DEFPL)
+            default_payload_3_01_macro_pic_1, default_payload_3_01_macro_pic_2, default_payload_3_01_macro_pic_3,
+         #elif defined (DEVPL)
+            payload_dev_3_01_macro_pic_1, payload_dev_3_01_macro_pic_2, payload_dev_3_01_macro_pic_3,
+         #elif defined (DMPPL)
+            payload_dump_elfs_3_01_macro_pic_1, payload_dump_elfs_3_01_macro_pic_2, payload_dump_elfs_3_01_macro_pic_3,
+         #elif defined (NUAPL)
+            payload_no_unauth_syscall_3_01_macro_pic_1, payload_no_unauth_syscall_3_01_macro_pic_2, payload_no_unauth_syscall_3_01_macro_pic_3,
+         #else
+            #error Payload not defined
+         #endif
       #elif defined (FW310)
-         default_payload_3_10_macro_pic_1, default_payload_3_10_macro_pic_2, default_payload_3_10_macro_pic_3,
+         #if defined (DEFPL)
+            default_payload_3_10_macro_pic_1, default_payload_3_10_macro_pic_2, default_payload_3_10_macro_pic_3,
+         #elif defined (DEVPL)
+            payload_dev_3_10_macro_pic_1, payload_dev_3_10_macro_pic_2, payload_dev_3_10_macro_pic_3,
+         #elif defined (DMPPL)
+            payload_dump_elfs_3_10_macro_pic_1, payload_dump_elfs_3_10_macro_pic_2, payload_dump_elfs_3_10_macro_pic_3,
+         #elif defined (NUAPL)
+            payload_no_unauth_syscall_3_10_macro_pic_1, payload_no_unauth_syscall_3_10_macro_pic_2, payload_no_unauth_syscall_3_10_macro_pic_3,
+         #else
+            #error Payload not defined
+         #endif
       #elif defined (FW315)
-         default_payload_3_15_macro_pic_1, default_payload_3_15_macro_pic_2, default_payload_3_15_macro_pic_3,
+         #if defined (DEFPL)
+            default_payload_3_15_macro_pic_1, default_payload_3_15_macro_pic_2, default_payload_3_15_macro_pic_3,
+         #elif defined (DEVPL)
+            payload_dev_3_15_macro_pic_1, payload_dev_3_15_macro_pic_2, payload_dev_3_15_macro_pic_3,
+         #elif defined (DMPPL)
+            payload_dump_elfs_3_15_macro_pic_1, payload_dump_elfs_3_15_macro_pic_2, payload_dump_elfs_3_15_macro_pic_3,
+         #elif defined (NUAPL)
+            payload_no_unauth_syscall_3_15_macro_pic_1, payload_no_unauth_syscall_3_15_macro_pic_2, payload_no_unauth_syscall_3_15_macro_pic_3,
+         #else
+            #error Payload not defined
+         #endif
       #elif defined (FW341)
-         default_payload_3_41_macro_pic_1, default_payload_3_41_macro_pic_2, default_payload_3_41_macro_pic_3,
+         #if defined (DEFPL)
+            default_payload_3_41_macro_pic_1, default_payload_3_41_macro_pic_2, default_payload_3_41_macro_pic_3,
+         #elif defined (DEVPL)
+            payload_dev_3_41_macro_pic_1, payload_dev_3_41_macro_pic_2, payload_dev_3_41_macro_pic_3,
+         #elif defined (DMPPL)
+            payload_dump_elfs_3_41_macro_pic_1, payload_dump_elfs_3_41_macro_pic_2, payload_dump_elfs_3_41_macro_pic_3,
+         #elif defined (NUAPL)
+            payload_no_unauth_syscall_3_41_macro_pic_1, payload_no_unauth_syscall_3_41_macro_pic_2, payload_no_unauth_syscall_3_41_macro_pic_3,
+         #else
+            #error Payload not defined
+         #endif
       #else
          #error Firmware not defined
       #endif
