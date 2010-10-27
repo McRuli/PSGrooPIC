@@ -1,1 +1,5 @@
 Proyect started in Oct 27/2010
+
+This is the alternative source for psgroopic. Based in the main source, only use one led for show progress. 
+The main source is compiled for Beepic support, this circuit use 2 leds.
+In the DIY Bootloader version, if you burn the PIC in low voltage (using serials burning), the "second led red" is not present (DIY circuit need in this pin a ground signal). 
