@@ -60,7 +60,7 @@ unsigned int16 port_change[6] = { C_PORT_NONE, C_PORT_NONE, C_PORT_NONE, C_PORT_
 void Chirp()
 {
    cnt=2;
-   output_high(LEDR);
+   output_high(LEDG);
 }
 
 void Delay10ms(unsigned char delay)
@@ -305,13 +305,11 @@ void OnDongleOK()
    BlinkMode=1;
    disable_interrupts(INT_TIMER0);
    output_high(LEDG);
-   output_low(LEDR);
 }
 
 void main()
 {
-   output_high(LEDR);
-   output_low(LEDG);
+   output_high(LEDG);
    
    usb_init();
    
@@ -425,7 +423,7 @@ void timer()
    {
       if(cnt==20)
       {
-         output_toggle(LEDR);
+         output_toggle(LEDG);
          cnt=0;
       }
       else
@@ -435,7 +433,7 @@ void timer()
    {
       if(!cnt)
       {
-      output_low(LEDR);
+      output_low(LEDG);
       }
       else cnt--;
    }
